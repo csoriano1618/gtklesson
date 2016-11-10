@@ -84,7 +84,7 @@ class BrowserWindow(Gtk.ApplicationWindow):
         self.set_titlebar(titlebar)
 
         self._notebook = Gtk.Notebook()
-        # self._notebook.connect("switch-page", self._notebook_on_switch_page)
+        self._notebook.connect("switch-page", self._notebook_on_switch_page)
         self.add(self._notebook)
         self._create_tab()
 

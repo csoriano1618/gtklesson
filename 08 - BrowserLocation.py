@@ -31,7 +31,7 @@ class BrowserWindow(Gtk.ApplicationWindow):
         # "notify::" signals names are emitted for every change in a property.
         # This is based on GObject
 
-        #self._webview.connect("notify::uri", self._webview_on_uri_changed)
+        self._webview.connect("notify::uri", self._webview_on_uri_changed)
         self.add(self._webview)
 
         self.show_all()

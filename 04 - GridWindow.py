@@ -25,7 +25,7 @@ class GridWindow(Gtk.Window):
         button4 = Gtk.Button(label="Button 4")
         button5 = Gtk.Button(label="Button 5")
         button6 = Gtk.Button(label="Button 6")
-        button6.set_hexpand(True)
+        #button6.set_hexpand(True)
 
         grid.add(button1)
         grid.attach(button2, 1, 0, 2, 1)

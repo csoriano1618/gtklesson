@@ -31,7 +31,7 @@ class BrowserWindow(Gtk.ApplicationWindow):
         buttonbox.add(self._backbutton)
         buttonbox.add(self._forwardbutton)
         titlebar.pack_start(buttonbox)
-        #buttonbox.get_style_context().add_class("linked")
+        buttonbox.get_style_context().add_class("linked")
 
         self._urientry = Gtk.Entry()
         self._urientry.set_size_request(300, -1)

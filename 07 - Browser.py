@@ -18,11 +18,11 @@ class BrowserWindow(Gtk.ApplicationWindow):
         super().__init__()
         self.set_size_request(750, 600)
         titlebar = Gtk.HeaderBar()
-        #titlebar.set_show_close_button(True)
+        titlebar.set_show_close_button(True)
 
         self.set_titlebar(titlebar)
         self._webview = WebKit2.WebView()
-        #self._webview.load_uri(HOME_PAGE)
+        self._webview.load_uri(HOME_PAGE)
         self.add(self._webview)
 
         self.show_all()

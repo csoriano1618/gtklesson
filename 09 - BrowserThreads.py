@@ -32,12 +32,12 @@ class BrowserWindow(Gtk.ApplicationWindow):
         titlebar.set_custom_title(self.urientry)
 
         self.set_titlebar(titlebar)
-        self.webview = WebKit2.WebView()
-        self.webview.load_uri(HOME_PAGE)
+        self._webview = WebKit2.WebView()
+        self._webview.load_uri(HOME_PAGE)
         # "notify::" signals names are emitted for every change in a property.
         # This is based on GObject
         self._webview.connect("notify::uri", self._webview_on_uri_changed)
-        self.add(self.webview)
+        self.add(self._webview)
 
         self.show_all()
 
@@ -48,7 +48,7 @@ class BrowserWindow(Gtk.ApplicationWindow):
 
     def _webview_on_uri_changed(self, signalSender, propertyValue):
         # property value using gi data structures
-        self.urientry.set_text(self.webview.get_uri())
+        self.urientry.set_text(self._webview.get_uri())
 
     def _check_dowloads_folder (self):
         self._walk_system_async(DOWNLOADS_FOLDER)
